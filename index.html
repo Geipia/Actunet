@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ActuNet – L'actualité autrement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.png">
+  <style>
+    body {
+      background: #0d1b2a;
+      color: #e0f0ff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #1b263b;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid #0077ff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #61dafb;
+    }
+
+    header p {
+      margin: 5px;
+      font-size: 1em;
+      color: #9cc8ff;
+    }
+
+    main {
+      padding: 30px 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .article-card {
+      background: #1e2d40;
+      margin-bottom: 25px;
+      padding: 20px;
+      border-left: 4px solid #0099ff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 50, 0.3);
+      transition: transform 0.2s;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .article-card:hover {
+      transform: scale(1.01);
+    }
+
+    .article-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #58c4ff;
+    }
+
+    .article-content {
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-size: 1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1b263b;
+      border-top: 3px solid #0077ff;
+      font-size: 0.9em;
+      color: #8fbbe7;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      .article-title {
+        font-size: 1.2em;
+      }
+      .article-content {
+        font-size: 0.95em;
+      }
+      main {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+  <script src="pub-hilltopads.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>ActuNet</h1>
+    <p>L'actualité autrement</p>
+  </header>
+
+  <main id="articles-container">
+    <!-- Articles chargés ici -->
+    (function(iqrx){
+  var d = document,
+      s = d.createElement('script'),
+      l = d.scripts[d.scripts.length - 1];
+  s.settings = iqrx || {};
+  s.src = "//unwritten-cash.com/ctDn9.6-bh2z5MlUSeWpQO9qNGj/Qzy/MLDjYn2oODS/0I2tNHDCIlwiNYjhcow_";
+  s.async = true;
+  s.referrerPolicy = 'no-referrer-when-downgrade';
+  l.parentNode.insertBefore(s, l);
+})({});
+
+  </main>
+  
+  (function(iqrx){
+  var d = document,
+      s = d.createElement('script'),
+      l = d.scripts[d.scripts.length - 1];
+  s.settings = iqrx || {};
+  s.src = "//unwritten-cash.com/ctDn9.6-bh2z5MlUSeWpQO9qNGj/Qzy/MLDjYn2oODS/0I2tNHDCIlwiNYjhcow_";
+  s.async = true;
+  s.referrerPolicy = 'no-referrer-when-downgrade';
+  l.parentNode.insertBefore(s, l);
+})({});
+
+
+  <footer>
+    © 2025 – ActuNet. Tous droits réservés.
+  </footer>
+
+  <script>
+    const articleFiles = [
+      'articles/Belgique : économie, tech et biotech.txt',
+      'articles/Tensions internationales et mouvements en Belgique.txt',
+      'articles/Défense & infrastructure maritime.txt'
+    ];
+
+    const container = document.getElementById('articles-container');
+
+    articleFiles.forEach(file => {
+      fetch(file)
+        .then(response => response.text())
+        .then(text => {
+          const title = file.split('/').pop().replace('.txt', '').replace(/[-_]/g, ' ');
+          const card = document.createElement('div');
+          card.className = 'article-card';
+          card.innerHTML = `
+            <div class="article-title">${title}</div>
+            <div class="article-content">${text}</div>
+          `;
+          container.appendChild(card);
+        })
+        .catch(err => {
+          console.error('Erreur de chargement :', file, err);
+        });
+    });
+  </script>
+</body>
+</html>
